@@ -1,21 +1,44 @@
-.nav {
-  margin: 0 !important;
-  /* padding: 0 !important; */
-  background-color: #dee2f0;
-  padding-left: 50px !important;
-  padding-right: 50px !important;
-}
-.nav_container {
-  display: flex !important;
-  justify-content: space-around !important;
-  align-items: center !important;
+@media only screen and (min-width: 780px) {
+  .nav_bar {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+
+  .list_item {
+    margin-left: 30px;
+    font-family: Montserrat;
+  }
 }
 
-.nav_items {
-  display: flex;
-  align-items: center !important;
-  justify-content: space-around !important;
+.brand_name {
+  color: var(--primary-color, #001f3f);
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.32px;
+  text-transform: capitalize;
+}
+
+.nav_bar {
+  margin: 0 !important;
+  background-color: #dee2f0;
+}
+
+.list_item {
+  color: var(--text-color-5, #303030);
+  /* desktop button/link */
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500 !important;
+  line-height: 21px; /* 131.25% */
+  letter-spacing: -0.32px;
+  text-transform: capitalize;
   text-decoration: none !important;
+  font-weight: 500;
+  color: var(--primary-color-5, #273044) !important;
 }
 
 .nav_links {
@@ -26,20 +49,18 @@
 .sign_up {
   border-radius: 8px;
   background: var(--primary-color-5, #273044) !important;
+  font-family: Montserrat;
   font-size: small !important;
-
   padding: 10px 20px;
-
   margin-right: 20px;
   border-style: none !important;
 }
 
 .login {
+  font-family: Montserrat;
   font-size: small !important;
   border-radius: 8px;
   background: var(--secondary-color-4, #06629d) !important;
-
   padding: 10px 20px;
-
   border-style: none !important;
 }

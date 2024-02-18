@@ -1,12 +1,7 @@
-import MainNav from "./layouts/MainNav";
-import { Fragment } from "react";
+import Layout from "./layouts/Layout";
 
 const App = () => {
-  return (
-    <Fragment>
-      <MainNav />
-    </Fragment>
-  );
+  return <Layout />;
 };
 
 export default App;

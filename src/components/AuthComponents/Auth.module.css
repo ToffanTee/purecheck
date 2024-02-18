@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&family=Roboto:wght@300;400;500;700;900&display=swap");
+
+@media only screen and (min-width: 780px) {
+  .login_content {
+    margin-top: 50px;
+    /* margin-bottom: 200px; */
+    background-color: #BDC6E0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 500px;
+    height: fit-content;
+    border-radius: 10px;
+  }
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* LOGIN PAGE STYLES */
+.login_container {
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login_content {
+    margin-top: 200px;
+    /* margin-bottom: 200px; */
+    background-color: #BDC6E0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 500px;
+    height: fit-content;
+    border-radius: 10px;
+  }
+
+  .form{
+    padding: 70px 0;
+    align-items: center;
+  }
+  
+  .input_field {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .login_button {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #273044;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .forgot_password {
+    margin-bottom: 20px;
+    /* text-decoration: none; */
+    color: #273044;
+  }
+  
+  .register_link {
+    margin-top: 20px;
+    /* text-decoration: none; */
+    color: #273044;
+  }
+  
+  /* SIGN-UP REGISTER PAGE STYLES */
