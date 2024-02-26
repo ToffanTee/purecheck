@@ -8,7 +8,7 @@ const Features = () => {
       <h1 className={`text-center mb-5 ${styles.feature_text}`}>
         Features section
       </h1>
-      <div className={styles.features_div}></div>
+      {/* <div className={styles.features_div}></div> */}
       <Row>
         <FeaturesCard />
         <FeaturesCard />

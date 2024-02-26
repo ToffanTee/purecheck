@@ -1,32 +1,52 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { useLogoutUserMutation } from "../lib/APIs/authAPI";
+import { useGetCurrentUserMutation } from "../lib/APIs/userAPI";
+import { useEffect } from "react";
 import styles from "./MainNav.module.css";
 
 const MainNav = () => {
+  const [getCurrentUser, response] = useGetCurrentUserMutation();
+
+  const [logoutUser, { isSuccess }] = useLogoutUserMutation();
+
+  const { user } = useSelector((state) => state.userState);
+
+  useEffect(() => {
+    const onGetCurrentUser = async () => {
+      await getCurrentUser();
+    };
+    onGetCurrentUser();
+  }, [getCurrentUser]);
+
   const navData = [
     {
-      path: "/Blog",
+      path: "/blog",
       name: "Blog",
     },
     {
-      path: "/Community",
+      path: "/community",
       name: "Community",
     },
+    // {
+    //   path: "/pricing",
+    //   name: "Pricing",
+    // },
     {
-      path: "/Pricing",
-      name: "Pricing",
-    },
-    {
-      path: "/ContactUs",
+      path: "/contactus",
       name: "Contact Us",
     },
   ];
+
   return (
-    <Navbar expand="md" className={styles.nav_bar}>
+    <Navbar expand="md" className={`${styles.nav_bar} fixed-top`}>
       <Container fluid>
-        <Navbar.Brand href="/" className={styles.brand_name}>
-          PURECHECK
+        <Navbar.Brand>
+          <NavLink className={styles.brand_name} to={"/"}>
+            PURECHECK
+          </NavLink>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -43,12 +63,25 @@ const MainNav = () => {
           </Nav>
 
           <Nav className={`ms-auto`}>
-            <NavLink className={styles.nav_links} to="/login">
-              <Button className={styles.sign_up}>Login</Button>
-            </NavLink>
-            <NavLink className={styles.nav_links} to="/sign-up">
-              <Button className={styles.login}>Register</Button>
-            </NavLink>
+            {!user && (
+              <NavLink className={styles.nav_links} to="/sign-up">
+                <Button className={styles.login}>Register</Button>
+              </NavLink>
+            )}
+
+            {!user && (
+              <NavLink className={styles.nav_links} to="/login">
+                <Button className={styles.sign_up}>Login</Button>
+              </NavLink>
+            )}
+
+            {user && (
+              <NavLink className={styles.nav_links}>
+                <Button className={styles.login} onClick={logoutUser}>
+                  Logout
+                </Button>
+              </NavLink>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

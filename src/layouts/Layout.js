@@ -1,10 +1,10 @@
 import { Fragment } from "react";
 // import { useLocation } from "react-router-dom";
 import MainNav from "./MainNav";
-import AppRoutes from "./AppRoutes";
+import Footer from "./Footer";
 import SEO from "../helpers/SEO";
 
-const Layout = () => {
+const Layout = (props) => {
   //   const location = useLocation();
   //console.log(location); location is an object and we are destucturing pathname
 
@@ -49,10 +49,8 @@ const Layout = () => {
       <header>
         <MainNav />
       </header>
-      <main>
-        <AppRoutes />
-      </main>
-      <footer></footer>
+      <main>{props.children}</main>
+      <Footer />
     </Fragment>
   );
 };

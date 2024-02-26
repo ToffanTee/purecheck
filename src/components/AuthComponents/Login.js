@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useLoginUserMutation } from "../../lib/APIs/authAPI";
+import { useGetCurrentUserMutation } from "../../lib/APIs/userAPI";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
@@ -19,6 +20,9 @@ const Login = () => {
   const [loginUser, { isError, error, isSuccess, isLoading }] =
     useLoginUserMutation();
 
+  const [getCurrentUser, { isSuccess: getCurrentUserSuccess }] =
+    useGetCurrentUserMutation();
+
   const onLoginUser = (event) => {
     event.preventDefault();
 
@@ -30,13 +34,20 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (isSuccess || user) {
+    if (isSuccess) {
       setSuccessMessage("Login success! Redirecting...");
+      getCurrentUser();
       setTimeout(() => {
         navigate("/");
       }, 3000); // Redirect after 3 seconds
     }
-  }, [isSuccess, user, navigate]);
+  }, [isSuccess]);
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, getCurrentUserSuccess]);
 
   return (
     <div className={styles.login_container}>
@@ -126,10 +137,9 @@ const Login = () => {
           <div>
             <p>
               Don't have an account?{" "}
-              <a href={"/sign-up"} className={styles.register_link}>
-                Register here
-              </a>
-              !
+              <Link to={"/register"} className={styles.register_link}>
+                Register here!
+              </Link>
             </p>
           </div>
         </div>

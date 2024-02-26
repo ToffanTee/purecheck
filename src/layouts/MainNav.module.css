@@ -12,13 +12,12 @@
 
 .brand_name {
   color: var(--primary-color, #001f3f);
-  font-family: "Montserrat", sans-serif;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.32px;
-  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif !important;
+  text-decoration: none;
+  font-size: 27px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.32px !important;
+  padding: 0 !important;
 }
 
 .nav_bar {
@@ -52,7 +51,7 @@
   font-family: Montserrat;
   font-size: small !important;
   padding: 10px 20px;
-  margin-right: 20px;
+  /* margin-right: 20px; */
   border-style: none !important;
 }
 
@@ -63,4 +62,5 @@
   background: var(--secondary-color-4, #06629d) !important;
   padding: 10px 20px;
   border-style: none !important;
+  margin-right: 20px;
 }

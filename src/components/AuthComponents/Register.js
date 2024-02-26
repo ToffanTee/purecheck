@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useNavigate, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useCreateUserMutation } from "../../lib/APIs/userAPI";
@@ -18,6 +19,8 @@ const Register = () => {
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
   // const [errorMessage, setErrorMessage] = useState("");
   const [allFieldsFilled, setAllFieldsFilled] = useState(true);
+
+  const { user } = useSelector((state) => state.userState);
 
   const navigate = useNavigate();
 
@@ -52,27 +55,18 @@ const Register = () => {
     }
   }, [isSuccess, navigate]);
 
-  // useEffect(() => {
-  //   if (isSuccess) {
-  //     navigate("/login");
-  //   }
-  // }, [isSuccess]);
-  // useEffect(() => {
-  //   // Set error message and clear it after 5 seconds
-  //   if (isError) {
-  //     setErrorMessage(error?.data?.error);
-  //     const timer = setTimeout(() => {
-  //       setErrorMessage("");
-  //     }, 5000);
-  //     return () => clearTimeout(timer); // Cleanup the timer to prevent memory leaks
-  //   }
-  // }, [isError, error]);
   useEffect(() => {
     // Check if all fields are filled
     setAllFieldsFilled(
       firstName && lastName && email && password && confirmPassword
     );
   }, [firstName, lastName, email, password, confirmPassword]);
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user]);
 
   return (
     <div className={styles.login_container}>
@@ -93,7 +87,7 @@ const Register = () => {
               class="alert alert-danger"
               role="alert"
             >
-              {error?.data?.error}
+              {error?.data?.error || "Something went wrong"}
             </div>
           )}
 
@@ -204,7 +198,7 @@ const Register = () => {
           </form>
           <div className={styles.register_link}>
             <p>
-              Already have an account? <a href={"/login"}>Login</a>
+              Already have an account? <Link to={"/login"}>Login</Link>
             </p>
           </div>
         </div>

@@ -105,3 +105,18 @@
   border-top: 1px solid black;
   z-index: -1;
 } */
+
+/* FAQs */
+.accordion_{
+  margin-top: 5px;
+  margin-bottom: 40px !important;
+  max-width: 900px !important; /* Adjust as needed */
+  margin: 0 auto !important; /* Center horizontally */
+}
+
+.accordion_item {
+  margin-bottom: 10px;
+  border:  #1b1b1b solid !important;
+  /* border-radius: 10px; */
+  /* background-color:  #5e5e5e !important; */
+}
