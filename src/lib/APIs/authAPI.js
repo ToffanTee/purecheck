@@ -9,6 +9,14 @@ export const authApi = createApi({
   }),
 
   endpoints: (builder) => ({
+    verifyUserAccount: builder.mutation({
+      query: (payload) => ({
+        url: "api/users/verify-account",
+        method: "POST",
+        body: payload,
+      }),
+    }),
+
     loginUser: builder.mutation({
       query: (payload) => ({
         url: "/api/login",
@@ -40,4 +48,8 @@ export const authApi = createApi({
   }),
 });
 
-export const { useLoginUserMutation, useLogoutUserMutation } = authApi;
+export const {
+  useVerifyUserAccountMutation,
+  useLoginUserMutation,
+  useLogoutUserMutation,
+} = authApi;

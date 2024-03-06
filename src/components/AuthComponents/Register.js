@@ -26,7 +26,7 @@ const Register = () => {
 
   const [createUser, { isError, error, isSuccess, isLoading }] =
     useCreateUserMutation();
-  console.log(error);
+
   const onSubmitForm = (event) => {
     event.preventDefault();
 
@@ -46,11 +46,9 @@ const Register = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      setSuccessMessage(
-        "Account created successfully! Redirecting to login..."
-      );
+      setSuccessMessage("Account created successfully!");
       setTimeout(() => {
-        navigate("/login");
+        navigate("/verify-account");
       }, 3000); // Redirect after 3 seconds
     }
   }, [isSuccess, navigate]);

@@ -30,7 +30,7 @@ const ContactUs = () => {
           Contact Us
         </h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
-          Let us help you build trust with your customers with PURECHECK.
+          Let us help you build trust with your customers using PURECHECK.
         </p>
       </div>
       <form

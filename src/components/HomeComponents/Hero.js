@@ -1,4 +1,5 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import heroImage from "../../assets/hero_image.png";
 
@@ -16,9 +17,13 @@ const Hero = () => {
               a simple scan.
             </p>
 
-            <Button className={styles.button} type="submit">
+            <Link
+              to={"/verify-product"}
+              className={styles.button}
+              type="submit"
+            >
               Start Verification
-            </Button>
+            </Link>
           </div>
         </Col>
         <Col md={6}>
