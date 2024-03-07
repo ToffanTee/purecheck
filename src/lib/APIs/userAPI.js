@@ -4,7 +4,7 @@ import { setUser } from "./userSlice";
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:4000",
+    baseUrl: "https://purecheckserver.onrender.com",
   }),
 
   endpoints: (builder) => ({

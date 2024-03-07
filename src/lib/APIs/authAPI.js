@@ -5,7 +5,7 @@ import { logout } from "./userSlice";
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:4000",
+    baseUrl: "https://purecheckserver.onrender.com",
   }),
 
   endpoints: (builder) => ({
