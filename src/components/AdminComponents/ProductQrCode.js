@@ -1,6 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import QRCode from "react-qr-code";
 
 const ProductQrCode = ({ codes, productName, goBack }) => {
@@ -13,7 +14,7 @@ const ProductQrCode = ({ codes, productName, goBack }) => {
 
       <div>
         <FontAwesomeIcon
-          icon={faEyeSlash}
+          icon={faArrowLeft}
           onClick={onGoBack}
           style={{
             cursor: "pointer",

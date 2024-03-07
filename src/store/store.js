@@ -5,6 +5,7 @@ import { userApi } from "../lib/APIs/userAPI";
 import { productApi } from "../lib/APIs/productAPI";
 import { blogApi } from "../lib/APIs/blogAPI";
 import { productVerificationApi } from "../lib/APIs/productVerificationApi";
+import { companyApi } from "../lib/APIs/companyApi";
 import userSlice from "../lib/APIs/userSlice";
 
 export const store = configureStore({
@@ -14,6 +15,7 @@ export const store = configureStore({
     [productApi.reducerPath]: productApi.reducer,
     [blogApi.reducerPath]: blogApi.reducer,
     [productVerificationApi.reducerPath]: productVerificationApi.reducer,
+    [companyApi.reducerPath]: companyApi.reducer,
     userState: userSlice,
   },
 
@@ -23,7 +25,8 @@ export const store = configureStore({
       authApi.middleware,
       productApi.middleware,
       blogApi.middleware,
-      productVerificationApi.middleware
+      productVerificationApi.middleware,
+      companyApi.middleware
     ),
 });
 

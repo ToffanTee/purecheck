@@ -25,7 +25,7 @@ export const userApi = createApi({
       async onQueryStarted(arg, { dispatch, queryFulfilled }) {
         try {
           const { data } = await queryFulfilled;
-          dispatch(setUser(data?.user));
+          dispatch(setUser(data));
         } catch (error) {}
       },
     }),

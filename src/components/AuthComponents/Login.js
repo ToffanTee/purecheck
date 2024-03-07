@@ -20,7 +20,7 @@ const Login = () => {
   const [loginUser, { isError, error, isSuccess, isLoading }] =
     useLoginUserMutation();
 
-  const [getCurrentUser, { isSuccess: getCurrentUserSuccess }] =
+  const [getCurrentUser, { isSuccess: getCurrentUserSuccess, data }] =
     useGetCurrentUserMutation();
 
   const onLoginUser = (event) => {

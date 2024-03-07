@@ -24,23 +24,47 @@ const Layout = (props) => {
       metaDescription:
         "Sign Up page of PureCheck website, let's get you started when you sign up",
     };
+  } else if (pathname === "/verify-account") {
+    titleData = {
+      title: "PureCheck - Verify Account",
+      metaDescription: "Account verification page of PureCheck website.",
+    };
   } else if (pathname === "/login") {
     titleData = {
       title: "PureCheck - Sign In",
       metaDescription:
         "Sign In page of PureCheck website, let's get you started when you sign in here",
     };
-    //   } else if (pathname === "/about-me") {
-    //     titleData = {
-    //       title: "Tonye Codes - About Me",
-    //       metaDescription:
-    //         "About me page of Tonye Codes blog, this is where you find all the information about Tonye",
-    //     };
-    //   } else {
-    //     titleData = {
-    //       title: "Error 404 - Page Not Found",
-    //       metaDescription: "Page does not exist",
-    //     };
+  } else if (pathname === "/verify-product") {
+    titleData = {
+      title: "PureCheck - Verify Product",
+      metaDescription: "Product verification page of PureCheck website.",
+    };
+  } else if (pathname === "/blog") {
+    titleData = {
+      title: "PureCheck - Blog",
+      metaDescription: "Blog page of PureCheck website.",
+    };
+  } else if (pathname === "/community") {
+    titleData = {
+      title: "PureCheck - Community",
+      metaDescription: "Community page of PureCheck website.",
+    };
+  } else if (pathname === "/contactus") {
+    titleData = {
+      title: "PureCheck - Contact Us",
+      metaDescription: "Contact Us page of PureCheck website.",
+    };
+  } else if (pathname === "/admin") {
+    titleData = {
+      title: "PureCheck - Admin",
+      metaDescription: "Admin page of PureCheck website.",
+    };
+  } else {
+    titleData = {
+      title: "Error 404 - Page Not Found",
+      metaDescription: "Page does not exist",
+    };
   }
 
   SEO(titleData);

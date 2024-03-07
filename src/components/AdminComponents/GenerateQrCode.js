@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
 import { useGetProductsByCompanyMutation } from "../../lib/APIs/productAPI";
+import { useGetAllCompaniesByUserMutation } from "../../lib/APIs/companyApi";
 import ErrorNotification from "./ErrorNotification";
 import { useEffect } from "react";
 import ProductQrCode from "./ProductQrCode";
@@ -10,13 +10,15 @@ const GenerateQrCode = () => {
   const [showCode, setShowCode] = useState(false);
   const [productName, setProductName] = useState("");
   const [codes, setCodes] = useState([]);
+  const [company, setCompany] = useState("");
   const [getProductsByCompany, { data, isError, error, isSuccess, isLoading }] =
     useGetProductsByCompanyMutation();
 
-  const { user } = useSelector((state) => state.userState);
+  const [getAllCompaniesByUser, { data: userCompanies }] =
+    useGetAllCompaniesByUserMutation();
 
   useEffect(() => {
-    getProductsByCompany(user?.companyName);
+    getAllCompaniesByUser();
   }, []);
 
   useEffect(() => {
@@ -36,6 +38,12 @@ const GenerateQrCode = () => {
       setCodes([]);
     }
   }, [productName, data?.products]);
+
+  useEffect(() => {
+    if (company) {
+      getProductsByCompany(company);
+    }
+  }, [company]);
 
   const onGenerateCode = (event) => {
     event.preventDefault();
@@ -62,6 +70,20 @@ const GenerateQrCode = () => {
         <Col lg={9}>
           {!showCode && (
             <Form className="mt-5">
+              <Form.Select
+                aria-label="Default select example"
+                className="mb-5"
+                onChange={(event) => setCompany(event.target.value)}
+              >
+                <option value={""}>Select Company</option>
+                {userCompanies?.map((company) => {
+                  return (
+                    <option value={company.name} key={company._id}>
+                      {company.name}
+                    </option>
+                  );
+                })}
+              </Form.Select>
               <Form.Select
                 aria-label="Default select example"
                 className="mb-5"

@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { useCreateProductMutation } from "../../lib/APIs/productAPI";
+import {
+  useCreateProductMutation,
+  useUpdateProductMutation,
+} from "../../lib/APIs/productAPI";
+import { useGetAllCompaniesByUserMutation } from "../../lib/APIs/companyApi";
 import ErrorNotification from "./ErrorNotification";
 
 const ProductForm = () => {
@@ -10,7 +14,6 @@ const ProductForm = () => {
   const [NAFDAC_NO, setNAFDAC_NO] = useState("");
   const [company, setCompany] = useState("");
   const [productTotal, setProductTotal] = useState("");
-  const [productCode, setProductCode] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
   const notify = (errorMessage) => toast(errorMessage);
@@ -18,7 +21,19 @@ const ProductForm = () => {
   const [createProduct, { isError, error, isSuccess, isLoading }] =
     useCreateProductMutation();
 
-  const onSubmitForm = (event) => {
+  const [
+    updateProduct,
+    {
+      isError: updateProductError,
+      error: productError,
+      isSuccess: updateProductSuccess,
+      isLoading: updateProductIsLooadig,
+    },
+  ] = useUpdateProductMutation();
+
+  const [getAllCompaniesByUser, { data }] = useGetAllCompaniesByUserMutation();
+
+  const onCreateProduct = (event) => {
     event.preventDefault();
 
     createProduct({
@@ -27,7 +42,20 @@ const ProductForm = () => {
       NAFDAC_NO,
       company,
       productTotal,
-      productCode,
+      productCode: name.slice(0, 3).toUpperCase(),
+    });
+  };
+
+  const onUpdateProduct = (event) => {
+    event.preventDefault();
+
+    updateProduct({
+      name,
+      description,
+      NAFDAC_NO,
+      company,
+      productTotal,
+      productCode: name.slice(0, 3).toUpperCase(),
     });
   };
 
@@ -40,7 +68,6 @@ const ProductForm = () => {
       setNAFDAC_NO("");
       setCompany("");
       setProductTotal("");
-      setProductCode("");
 
       setTimeout(() => {
         setSuccessMessage(null);
@@ -52,7 +79,17 @@ const ProductForm = () => {
     if (isError) {
       notify(error?.data?.error || "unable to create product");
     }
-  }, [isError, error]);
+
+    if (updateProductError) {
+      notify(productError?.data?.error || "something went wrong");
+    }
+  }, [isError, error, updateProductError]);
+
+  useEffect(() => {
+    getAllCompaniesByUser();
+  }, []);
+
+  console.log(productError);
 
   return (
     <Container>
@@ -61,7 +98,7 @@ const ProductForm = () => {
 
         <Col lg={3}></Col>
         <Col lg={9}>
-          <Form className="mt-5" onSubmit={onSubmitForm}>
+          <Form className="mt-5">
             <Form.Group className="mb-3">
               <Form.Control
                 type="text"
@@ -89,12 +126,24 @@ const ProductForm = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Control
-                type="text"
-                placeholder="Company Name"
-                value={company}
+              <Form.Select
+                aria-label="Default select example"
+                className="mb-5"
                 onChange={(event) => setCompany(event.target.value)}
-              />
+              >
+                {data?.length > 0 ? (
+                  <option>Select Company</option>
+                ) : (
+                  <option>No company created </option>
+                )}
+                {data?.map((company) => {
+                  return (
+                    <option value={company.name} key={company._id}>
+                      {company.name}
+                    </option>
+                  );
+                })}
+              </Form.Select>
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Control
@@ -104,21 +153,24 @@ const ProductForm = () => {
                 onChange={(event) => setProductTotal(event.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Control
-                type="text"
-                placeholder="Product Code"
-                value={productCode}
-                onChange={(event) => setProductCode(event.target.value)}
-              />
-            </Form.Group>
             <Button
               variant="primary"
               type="submit"
               value={isLoading ? "Please wait..." : "Create a Product"}
               disabled={isLoading}
+              onClick={onCreateProduct}
             >
-              Submit
+              Create Product
+            </Button>{" "}
+            <Button
+              variant="warning"
+              type="submit"
+              value={isLoading ? "Please wait..." : "Create a Product"}
+              disabled={isLoading}
+              className="float-end"
+              onClick={onUpdateProduct}
+            >
+              Update Product
             </Button>
           </Form>
         </Col>

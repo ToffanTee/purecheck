@@ -16,6 +16,15 @@ export const productApi = createApi({
       }),
     }),
 
+    updateProduct: builder.mutation({
+      query: (payload) => ({
+        url: "/api/product/update",
+        method: "PUT",
+        body: payload,
+        credentials: "include",
+      }),
+    }),
+
     getProductsByCompany: builder.mutation({
       query: (payload) => ({
         url: `/api/product/products-by-company/${payload}`,
@@ -26,5 +35,8 @@ export const productApi = createApi({
   }),
 });
 
-export const { useCreateProductMutation, useGetProductsByCompanyMutation } =
-  productApi;
+export const {
+  useCreateProductMutation,
+  useUpdateProductMutation,
+  useGetProductsByCompanyMutation,
+} = productApi;
