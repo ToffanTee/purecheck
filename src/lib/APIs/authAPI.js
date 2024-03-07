@@ -14,6 +14,7 @@ export const authApi = createApi({
         url: "api/users/verify-account",
         method: "POST",
         body: payload,
+        credentials: "include",
       }),
     }),
 
