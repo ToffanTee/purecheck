@@ -102,7 +102,6 @@ const ProductForm = () => {
             <Form.Group className="mb-3">
               <Form.Label>Product Name</Form.Label>
               <Form.Control
-                style={{ color: "#333", opacity: 0.5 }}
                 type="text"
                 placeholder="Product Name"
                 value={name}
@@ -112,7 +111,6 @@ const ProductForm = () => {
             <Form.Group className="mb-3">
               <Form.Label>Product Description</Form.Label>
               <Form.Control
-                style={{ color: "#333", opacity: 0.5 }}
                 type="text"
                 placeholder="Description"
                 as="textarea"
@@ -124,7 +122,6 @@ const ProductForm = () => {
             <Form.Group className="mb-3">
               <Form.Label>NAFDAC Number</Form.Label>
               <Form.Control
-                style={{ color: "#333", opacity: 0.5 }}
                 type="text"
                 placeholder="NAFDAC Number"
                 value={NAFDAC_NO}
@@ -155,7 +152,6 @@ const ProductForm = () => {
             <Form.Group className="mb-3">
               <Form.Label>Product Total</Form.Label>
               <Form.Control
-                style={{ color: "#333", opacity: 0.5 }}
                 type="number"
                 placeholder="Total Quantity Available"
                 value={productTotal}
