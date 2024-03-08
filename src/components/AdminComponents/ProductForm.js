@@ -98,9 +98,14 @@ const ProductForm = () => {
 
         <Col lg={3}></Col>
         <Col lg={9}>
+          <h1 className="d-block text-xl font-semibold leading-6 text-gray-900">
+            Create Product
+          </h1>
           <Form className="mt-5  mb-5">
             <Form.Group className="mb-3">
-              <Form.Label>Product Name</Form.Label>
+              <Form.Label className="d-block text-sm font-semibold leading-6 text-gray-900">
+                Product Name
+              </Form.Label>
               <Form.Control
                 type="text"
                 value={name}
@@ -108,7 +113,9 @@ const ProductForm = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Product Description</Form.Label>
+              <Form.Label className="d-block text-sm font-semibold leading-6 text-gray-900">
+                Product Description
+              </Form.Label>
               <Form.Control
                 type="text"
                 as="textarea"
@@ -118,7 +125,9 @@ const ProductForm = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>NAFDAC Number</Form.Label>
+              <Form.Label className="d-block text-sm font-semibold leading-6 text-gray-900">
+                NAFDAC Number
+              </Form.Label>
               <Form.Control
                 type="text"
                 value={NAFDAC_NO}
@@ -126,7 +135,9 @@ const ProductForm = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Company</Form.Label>
+              <Form.Label className="d-block text-sm font-semibold leading-6 text-gray-900">
+                Company
+              </Form.Label>
               <Form.Select
                 aria-label="Default select example"
                 className="mb-5"
@@ -149,7 +160,9 @@ const ProductForm = () => {
               </Form.Select>
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Product Total</Form.Label>
+              <Form.Label className="d-block text-sm font-semibold leading-6 text-gray-900">
+                Product Total
+              </Form.Label>
               <Form.Control
                 type="number"
                 value={productTotal}

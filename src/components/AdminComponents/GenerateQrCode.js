@@ -68,36 +68,50 @@ const GenerateQrCode = () => {
 
         <Col lg={3}></Col>
         <Col lg={9}>
+          <h1 className="d-block text-xl font-semibold leading-6 text-gray-900">
+            Generate QR Code
+          </h1>
           {!showCode && (
             <Form className="mt-5">
-              <Form.Select
-                aria-label="Default select example"
-                className="mb-5"
-                onChange={(event) => setCompany(event.target.value)}
-              >
-                <option value={""}>Select Company</option>
-                {userCompanies?.map((company) => {
-                  return (
-                    <option value={company.name} key={company._id}>
-                      {company.name}
-                    </option>
-                  );
-                })}
-              </Form.Select>
-              <Form.Select
-                aria-label="Default select example"
-                className="mb-5"
-                onChange={(event) => setProductName(event.target.value)}
-              >
-                <option value={""}>Select Product</option>
-                {data?.products?.map((product) => {
-                  return (
-                    <option value={product.name} key={product._id}>
-                      {product.name}
-                    </option>
-                  );
-                })}
-              </Form.Select>
+              <Form.Group>
+                <Form.Label className="d-block text-sm font-semibold leading-6 text-gray-900">
+                  Company
+                </Form.Label>
+                <Form.Select
+                  aria-label="Default select example"
+                  className="mb-5"
+                  onChange={(event) => setCompany(event.target.value)}
+                >
+                  <option value={""}>Select Company</option>
+                  {userCompanies?.map((company) => {
+                    return (
+                      <option value={company.name} key={company._id}>
+                        {company.name}
+                      </option>
+                    );
+                  })}
+                </Form.Select>
+              </Form.Group>
+              <Form.Group>
+                <Form.Label className="d-block text-sm font-semibold leading-6 text-gray-900">
+                  Product
+                </Form.Label>
+                <Form.Select
+                  aria-label="Default select example"
+                  className="mb-5"
+                  onChange={(event) => setProductName(event.target.value)}
+                >
+                  <option value={""}>Select Product</option>
+                  {data?.products?.map((product) => {
+                    return (
+                      <option value={product.name} key={product._id}>
+                        {product.name}
+                      </option>
+                    );
+                  })}
+                </Form.Select>
+              </Form.Group>
+
               <Button
                 variant="primary"
                 type="submit"

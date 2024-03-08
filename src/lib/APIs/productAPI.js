@@ -4,6 +4,7 @@ export const productApi = createApi({
   reducerPath: "productApi",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://purecheckserver.onrender.com",
+    // baseUrl: "http://localhost:4000",
   }),
 
   endpoints: (builder) => ({

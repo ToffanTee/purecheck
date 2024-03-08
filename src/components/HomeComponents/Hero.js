@@ -9,10 +9,10 @@ const Hero = () => {
       <Row>
         <Col md={6}>
           <div className={styles.hero_div}>
-            <h1 className={styles.hero_header}>Welcome to PURECHECK</h1>
+            <h1 className={styles.hero_header}>Welcome to PureCheck</h1>
 
             <p className={styles.hero_text}>
-              Shop with confidence knowing that<br></br> PURECHECK has your
+              Shop with confidence knowing that<br></br> PureCheck has your
               back, instantly <br></br> verifying the authenticity of items with
               a simple scan.
             </p>

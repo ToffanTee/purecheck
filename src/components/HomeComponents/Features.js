@@ -11,8 +11,6 @@ const Features = () => {
       {/* <div className={styles.features_div}></div> */}
       <Row>
         <FeaturesCard />
-        <FeaturesCard />
-        <FeaturesCard />
       </Row>
     </Container>
   );

@@ -45,7 +45,7 @@ const MainNav = () => {
       <Container fluid>
         <Navbar.Brand>
           <NavLink className={styles.brand_name} to={"/"}>
-            PURECHECK
+            PureCheck
           </NavLink>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

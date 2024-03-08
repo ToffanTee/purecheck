@@ -137,7 +137,7 @@ const Login = () => {
           <div>
             <p>
               Don't have an account?{" "}
-              <Link to={"/register"} className={styles.register_link}>
+              <Link to={"/sign-up"} className={styles.register_link}>
                 Register here!
               </Link>
             </p>

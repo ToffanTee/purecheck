@@ -42,25 +42,36 @@ const CompanyForm = (props) => {
 
         <Col lg={3}></Col>
         <Col lg={9}>
+          <h1 className="d-block text-xl font-semibold leading-6 text-gray-900">
+            Create Company
+          </h1>
           <Form className="mt-5" onSubmit={onSubmitForm}>
             <Form.Group className="mb-3">
+              <Form.Label className="d-block text-sm font-semibold leading-6 text-gray-900">
+                Company Name
+              </Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Company Name"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
               />
             </Form.Group>
-            <Form.Select
-              aria-label="Default select example"
-              className="mb-5"
-              onChange={(event) => setSubscriptionType(event.target.value)}
-            >
-              <option value={""}>Select Subscription Type</option>
-              <option value={"Monthly"}>Monthly</option>
-              <option value={"Quateryly"}>Quateryly</option>
-              <option value={"Annually"}>Annually</option>
-            </Form.Select>
+            <Form.Group>
+              <Form.Label className="d-block text-sm font-semibold leading-6 text-gray-900">
+                Subscription
+              </Form.Label>
+              <Form.Select
+                aria-label="Default select example"
+                className="mb-5"
+                onChange={(event) => setSubscriptionType(event.target.value)}
+              >
+                <option value={""}>Select Subscription Type</option>
+                <option value={"Monthly"}>Monthly</option>
+                <option value={"Quateryly"}>Quateryly</option>
+                <option value={"Annually"}>Annually</option>
+              </Form.Select>
+            </Form.Group>
+
             <Button
               variant="primary"
               type="submit"
