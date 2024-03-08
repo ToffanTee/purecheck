@@ -103,7 +103,6 @@ const ProductForm = () => {
               <Form.Label>Product Name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Product Name"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
               />
@@ -112,7 +111,6 @@ const ProductForm = () => {
               <Form.Label>Product Description</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Description"
                 as="textarea"
                 rows={3}
                 value={description}
@@ -123,7 +121,6 @@ const ProductForm = () => {
               <Form.Label>NAFDAC Number</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="NAFDAC Number"
                 value={NAFDAC_NO}
                 onChange={(event) => setNAFDAC_NO(event.target.value)}
               />
@@ -136,7 +133,9 @@ const ProductForm = () => {
                 onChange={(event) => setCompany(event.target.value)}
               >
                 {data?.length > 0 ? (
-                  <option>Select Company</option>
+                  <option style={{ color: "#333", opacity: 0.5 }}>
+                    Select Company
+                  </option>
                 ) : (
                   <option>No company created </option>
                 )}
@@ -153,7 +152,6 @@ const ProductForm = () => {
               <Form.Label>Product Total</Form.Label>
               <Form.Control
                 type="number"
-                placeholder="Total Quantity Available"
                 value={productTotal}
                 onChange={(event) => setProductTotal(event.target.value)}
               />
