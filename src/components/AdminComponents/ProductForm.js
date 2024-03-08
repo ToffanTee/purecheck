@@ -95,11 +95,12 @@ const ProductForm = () => {
     <Container>
       <Row>
         <ErrorNotification />
-
+        <h1>Product Creation Form</h1>
         <Col lg={3}></Col>
         <Col lg={9}>
           <Form className="mt-5">
             <Form.Group className="mb-3">
+              <Form.Label>Product Name</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Product Name"
@@ -108,6 +109,7 @@ const ProductForm = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
+              <Form.Label>Product Description</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Description"
@@ -118,6 +120,7 @@ const ProductForm = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
+              <Form.Label>NAFDAC Number</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="NAFDAC Number"
@@ -126,6 +129,7 @@ const ProductForm = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
+              <Form.Label>Company</Form.Label>
               <Form.Select
                 aria-label="Default select example"
                 className="mb-5"
@@ -146,6 +150,7 @@ const ProductForm = () => {
               </Form.Select>
             </Form.Group>
             <Form.Group className="mb-3">
+              <Form.Label>Product Total</Form.Label>
               <Form.Control
                 type="number"
                 placeholder="Total Quantity Available"
