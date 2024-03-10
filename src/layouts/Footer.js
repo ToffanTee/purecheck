@@ -6,16 +6,17 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <Link to={"/"} className="flex items-center">
+            <Link
+              style={{ textDecoration: "none" }}
+              to={"/"}
+              className="flex items-center"
+            >
               {/* <img
                 src="https://flowbite.com/docs/images/logo.svg"
                 className="h-8 me-3"
                 alt="FlowBite Logo"
               /> */}
-              <span
-                style={{ textDecoration: "none" }}
-                className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-              >
+              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                 PureCheck
               </span>
             </Link>
