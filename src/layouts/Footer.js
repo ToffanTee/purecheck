@@ -12,7 +12,7 @@ const Footer = () => {
                 className="h-8 me-3"
                 alt="FlowBite Logo"
               /> */}
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-decoration-none">
                 PureCheck
               </span>
             </Link>
@@ -24,12 +24,12 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <Link to={"/Blog"} className="hover:underline">
+                  <Link style={{ textDecoration: "none" }} to={"/Blog"}>
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/Community"} className="hover:underline">
+                  <Link style={{ textDecoration: "none" }} to={"/Community"}>
                     Community
                   </Link>
                 </li>
@@ -45,7 +45,7 @@ const Footer = () => {
                     href="https://github.com/ToffanTee"
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:underline "
+                    style={{ textDecoration: "none" }}
                   >
                     Github
                   </a>
@@ -55,7 +55,7 @@ const Footer = () => {
                     href="https://www.linkedin.com/in/tonye-toffan-53961b135/"
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:underline"
+                    style={{ textDecoration: "none" }}
                   >
                     LinkedIn
                   </a>
