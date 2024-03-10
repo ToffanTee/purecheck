@@ -79,7 +79,6 @@ const GenerateQrCode = () => {
                 </Form.Label>
                 <Form.Select
                   aria-label="Default select example"
-                  className="mb-5"
                   onChange={(event) => setCompany(event.target.value)}
                 >
                   <option value={""}>Select Company</option>

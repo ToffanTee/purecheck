@@ -17,7 +17,7 @@ const CompanyForm = (props) => {
     event.preventDefault();
 
     if (!name || !subscriptionType) {
-      return notify("company naeme and subscription plan are required");
+      return notify("Company Name and Subscription plan are required");
     }
 
     createCompany({

@@ -6,6 +6,7 @@ import {
   useUpdateProductMutation,
 } from "../../lib/APIs/productAPI";
 import { useGetAllCompaniesByUserMutation } from "../../lib/APIs/companyApi";
+import ProductList from "./ProductList";
 import ErrorNotification from "./ErrorNotification";
 
 const ProductForm = () => {
@@ -97,7 +98,7 @@ const ProductForm = () => {
         <ErrorNotification />
 
         <Col lg={3}></Col>
-        <Col lg={9}>
+        <Col lg={6}>
           <h1 className="d-block text-xl font-semibold leading-6 text-gray-900">
             Create Product
           </h1>
@@ -140,7 +141,6 @@ const ProductForm = () => {
               </Form.Label>
               <Form.Select
                 aria-label="Default select example"
-                className="mb-5"
                 onChange={(event) => setCompany(event.target.value)}
               >
                 {data?.length > 0 ? (
@@ -191,6 +191,7 @@ const ProductForm = () => {
           </Form>
         </Col>
       </Row>
+      <ProductList />
     </Container>
   );
 };

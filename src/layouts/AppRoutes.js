@@ -11,6 +11,7 @@ import AccountVerification from "../components/AuthComponents/AccountVerificatio
 import AdminPage from "../pages/AdminPage";
 import ProtectedRoutes from "./ProtectedRoutes";
 import VerificationPage from "../pages/VerificationPage";
+import CommunityPage from "../pages/CommunityPage";
 
 const AppRoutes = () => {
   const { user } = useSelector((state) => state.userState);
@@ -28,6 +29,8 @@ const AppRoutes = () => {
       </Route>
 
       <Route path="/blog" element={<BlogPage />} />
+
+      <Route path="/community" element={<CommunityPage />} />
 
       <Route path="/contactus" element={<ContactUsPage />} />
 

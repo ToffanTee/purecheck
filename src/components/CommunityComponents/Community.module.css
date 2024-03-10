@@ -1,0 +1,76 @@
+.community {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh !important;
+    padding: 30px;
+}
+
+.communityTitle {
+    font-weight: bold;
+    font-size: 1.875rem;
+    margin-bottom: 30px;
+}
+
+.communityForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 30px;
+
+}
+
+.thread_container {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.threadBtn {
+    margin-top: 50px;
+}
+.threadBtn, .modalBtn {
+    display: block !important;
+    width: 200px !important;
+    padding: 15px !important;
+    cursor: pointer;
+    outline: none !important;
+    border: none !important;
+    border-radius: 3px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    color: #fffbf5 !important;
+    background-color: #273044 !important;
+    margin-bottom: 15px;
+}
+
+.modal_content {
+    background-color: #fff;
+    width: 70%;
+    padding: 30px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modalInput {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.likes_container {
+    display: flex !important;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.likesBtn {
+    height: 30px;
+    color: #f99417 !important;
+    cursor: pointer ;
+}

@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
+import styles from "../CommunityComponents/Community.module.css";
 
 const ContactUs = () => {
   // const [agreed, setAgreed] = useState(false);
@@ -50,6 +51,7 @@ const ContactUs = () => {
               />
             </Form.Group>
             <Button
+              className={styles.modalBtn}
               variant="primary"
               type="submit"
               // value={isLoading ? "Please wait..." : "Create a Product"}
