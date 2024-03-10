@@ -1,3 +1,11 @@
+@media only screen and (max-width: 780px) {
+    .community {
+         
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+}
+
 .community {
     display: flex;
     width: 100%;

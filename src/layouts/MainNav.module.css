@@ -1,12 +1,16 @@
-@media only screen and (min-width: 780px) {
-  .nav_bar {
-    padding-left: 50px !important;
-    padding-right: 50px !important;
-  }
+@media only screen and (max-width: 780px) {
+ 
+  .sign_up{
+  margin-bottom: 20px;
+ }
+
+ .login {
+  margin-bottom: 20px;
+ }
 
   .list_item {
-    margin-left: 30px;
-    font-family: Montserrat;
+    margin-bottom: 30px;
+    padding: 0px !important;
   }
 }
 
@@ -17,12 +21,14 @@
   font-size: 27px !important;
   font-weight: 700 !important;
   letter-spacing: -0.32px !important;
-  padding: 0 !important;
+  
 }
 
 .nav_bar {
   margin: 0 !important;
   background-color: #dee2f0;
+  margin: 0px !important;
+  padding: 0px !important;
 }
 
 .list_item {
@@ -37,6 +43,7 @@
   text-transform: capitalize;
   text-decoration: none !important;
   font-weight: 500;
+  padding: 20px;
   color: var(--primary-color-5, #273044) !important;
 }
 
@@ -64,3 +71,4 @@
   border-style: none !important;
   margin-right: 20px;
 }
+

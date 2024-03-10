@@ -1,10 +1,11 @@
 import { Row, Col, Card } from "react-bootstrap";
+import styles from "./Home.module.css";
 
 const FeaturesCard = () => {
   return (
-    <Row>
+    <Row className={styles.feature_section}>
       <Col lg={4}>
-        <Card style={{ width: "100%", backgroundColor: "#dee2f0" }}>
+        <Card className={styles.feature_card}>
           <Card.Body>
             <Card.Title className="text-center">Product Scanning</Card.Title>
             {/* <Card.Subtitle className="mb-2 text-muted text-center">
@@ -20,7 +21,7 @@ const FeaturesCard = () => {
         </Card>
       </Col>
       <Col lg={4}>
-        <Card style={{ width: "100%", backgroundColor: "#dee2f0" }}>
+        <Card className={styles.feature_card}>
           <Card.Body>
             <Card.Title className="text-center">Image Analysis</Card.Title>
             {/* <Card.Subtitle className="mb-2 text-muted text-center">
@@ -36,7 +37,7 @@ const FeaturesCard = () => {
         </Card>
       </Col>
       <Col lg={4}>
-        <Card style={{ width: "100%", backgroundColor: "#dee2f0" }}>
+        <Card className={styles.feature_card}>
           <Card.Body>
             <Card.Title className="text-center">Text Analysis</Card.Title>
             {/* <Card.Subtitle className="mb-2 text-muted text-center">
