@@ -12,7 +12,10 @@ const Footer = () => {
                 className="h-8 me-3"
                 alt="FlowBite Logo"
               /> */}
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-decoration-none">
+              <span
+                style={{ textDecoration: "none" }}
+                className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+              >
                 PureCheck
               </span>
             </Link>
