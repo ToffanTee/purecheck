@@ -5,7 +5,10 @@ import { logout } from "./userSlice";
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://purecheckserver.onrender.com",
+    baseUrl:
+      process.env.NODE_ENV === "development"
+        ? process.env.REACT_APP_DEV_BACKEND_URL
+        : process.env.REACT_APP_PROD_BACKEND_URL,
     // baseUrl: "http://localhost:4000",
   }),
 

@@ -24,7 +24,7 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  const [createUser, { isError, error, isSuccess, isLoading }] =
+  const [createUser, { data, isError, error, isSuccess, isLoading }] =
     useCreateUserMutation();
 
   const onSubmitForm = (event) => {
@@ -46,7 +46,7 @@ const Register = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      setSuccessMessage("Account created successfully!");
+      setSuccessMessage(data?.message);
       setTimeout(() => {
         navigate("/verify-account");
       }, 3000); // Redirect after 3 seconds

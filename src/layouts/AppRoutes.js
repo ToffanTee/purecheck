@@ -12,6 +12,7 @@ import AdminPage from "../pages/AdminPage";
 import ProtectedRoutes from "./ProtectedRoutes";
 import VerificationPage from "../pages/VerificationPage";
 import CommunityPage from "../pages/CommunityPage";
+import CreateBlogsPage from "../pages/CreateBlogsPage";
 
 const AppRoutes = () => {
   const { user } = useSelector((state) => state.userState);
@@ -29,6 +30,8 @@ const AppRoutes = () => {
       </Route>
 
       <Route path="/blog" element={<BlogPage />} />
+
+      <Route path="/admin/blogs-create" element={<CreateBlogsPage />} />
 
       <Route path="/community" element={<CommunityPage />} />
 

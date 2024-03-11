@@ -1,4 +1,12 @@
 import { Row, Col, Card } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {
+  faQrcode,
+  faChartLine,
+  faCamera,
+  faFileAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import styles from "./Home.module.css";
 
 const FeaturesCard = () => {
@@ -7,6 +15,9 @@ const FeaturesCard = () => {
       <Col lg={4}>
         <Card className={styles.feature_card}>
           <Card.Body>
+            <div className={styles.iconCircle}>
+              <FontAwesomeIcon icon={faQrcode} className={styles.icon} />
+            </div>
             <Card.Title className="text-center">Product Scanning</Card.Title>
             {/* <Card.Subtitle className="mb-2 text-muted text-center">
               Card Subtitle
@@ -23,6 +34,9 @@ const FeaturesCard = () => {
       <Col lg={4}>
         <Card className={styles.feature_card}>
           <Card.Body>
+            <div className={styles.iconCircle}>
+              <FontAwesomeIcon icon={faCamera} className={styles.icon} />
+            </div>
             <Card.Title className="text-center">Image Analysis</Card.Title>
             {/* <Card.Subtitle className="mb-2 text-muted text-center">
               Card Subtitle
@@ -39,6 +53,10 @@ const FeaturesCard = () => {
       <Col lg={4}>
         <Card className={styles.feature_card}>
           <Card.Body>
+            <div className={styles.iconCircle}>
+              <FontAwesomeIcon icon={faFileAlt} className={styles.icon} />
+            </div>
+
             <Card.Title className="text-center">Text Analysis</Card.Title>
             {/* <Card.Subtitle className="mb-2 text-muted text-center">
               Card Subtitle

@@ -3,8 +3,10 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const productApi = createApi({
   reducerPath: "productApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://purecheckserver.onrender.com",
-    // baseUrl: "http://localhost:4000",
+    baseUrl:
+      process.env.NODE_ENV === "development"
+        ? process.env.REACT_APP_DEV_BACKEND_URL
+        : process.env.REACT_APP_PROD_BACKEND_URL,
   }),
 
   endpoints: (builder) => ({

@@ -3,8 +3,10 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const blogApi = createApi({
   reducerPath: "blogApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://purecheckserver.onrender.com",
-    // baseUrl: "http://localhost:4000",
+    baseUrl:
+      process.env.NODE_ENV === "development"
+        ? process.env.REACT_APP_DEV_BACKEND_URL
+        : process.env.REACT_APP_PROD_BACKEND_URL,
   }),
 
   endpoints: (builder) => ({
@@ -16,7 +18,16 @@ export const blogApi = createApi({
         credentials: "include",
       }),
     }),
+
+    createBlogs: builder.mutation({
+      query: (payload) => ({
+        url: "/api/blog/create",
+        method: "POST",
+        body: payload,
+        credentials: "include",
+      }),
+    }),
   }),
 });
 
-export const { useGetAllBlogsMutation } = blogApi;
+export const { useGetAllBlogsMutation, useCreateBlogsMutation } = blogApi;
