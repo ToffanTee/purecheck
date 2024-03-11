@@ -22,7 +22,7 @@ const Hero = () => {
               className={styles.button}
               type="submit"
             >
-              Start Verification
+              Scan a Product
             </Link>
           </div>
         </Col>
