@@ -19,6 +19,9 @@ const CreateBlogs = () => {
   const [createBlogs, { data, isError, error, isLoading }] =
     useCreateBlogsMutation();
 
+  console.log(error);
+  console.log(data);
+
   const toolbar = {
     inline: { inDropdown: true },
     list: { inDropdown: true },

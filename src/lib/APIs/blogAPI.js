@@ -27,7 +27,19 @@ export const blogApi = createApi({
         credentials: "include",
       }),
     }),
+
+    getSingleBlog: builder.mutation({
+      query: (payload) => ({
+        url: `/api/blog/${payload}`,
+        method: "GET",
+        credentials: "include",
+      }),
+    }),
   }),
 });
 
-export const { useGetAllBlogsMutation, useCreateBlogsMutation } = blogApi;
+export const {
+  useGetAllBlogsMutation,
+  useCreateBlogsMutation,
+  useGetSingleBlogMutation,
+} = blogApi;

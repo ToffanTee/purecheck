@@ -119,6 +119,19 @@
   background-color: #dee2f0 !important;
 }
 
+.feature_title{
+  text-decoration: none !important;
+  color: #000 !important;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin: 0 auto 20px; 
+}
+
 .feature_text {
   margin: 100px;
   color: var(--text-color-6, #1b1b1b);

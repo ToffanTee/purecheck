@@ -19,14 +19,7 @@ const Blogs = () => {
           </div>
         )}
         {data?.map((blog) => {
-          return (
-            <BlogCard
-              key={blog._id}
-              title={blog.title}
-              content={blog.content}
-              author={blog.author.email}
-            />
-          );
+          return <BlogCard key={blog._id} {...blog} />;
         })}
       </div>
     </div>
