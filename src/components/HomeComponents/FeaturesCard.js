@@ -16,73 +16,91 @@ const FeaturesCard = () => {
   return (
     <Row className={styles.feature_section}>
       <Col lg={4}>
-        <Card className={styles.feature_card}>
-          <Card.Body>
-            <div className={styles.iconCircle}>
-              <FontAwesomeIcon icon={faQrcode} className={styles.icon} />
-            </div>
-            <div className={styles.cardTitle}>
-              <Link
-                to={"/"}
-                className={styles.feature_title}
-                onClick={handleLinkClick}
-              >
-                Product Scanning
-              </Link>
-            </div>
+        <Link
+          to={"/"}
+          className={styles.feature_title}
+          onClick={handleLinkClick}
+        >
+          <Card className={styles.feature_card}>
+            <Card.Body>
+              <div className={styles.iconCircle}>
+                <FontAwesomeIcon icon={faQrcode} className={styles.icon} />
+              </div>
+              <div className={styles.cardTitle}>
+                <Link
+                  to={"/"}
+                  className={styles.feature_title}
+                  onClick={handleLinkClick}
+                >
+                  Product Scanning
+                </Link>
+              </div>
 
-            <Card.Text className="text-center">
-              Ensure product authenticity in seconds. just scan, verify, and
-              shop with confidence.
-            </Card.Text>
-          </Card.Body>
-        </Card>
+              <Card.Text className="text-center">
+                Ensure product authenticity in seconds. just scan, verify, and
+                shop with confidence.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Link>
       </Col>
       <Col lg={4}>
-        <Card className={styles.feature_card}>
-          <Card.Body>
-            <div className={styles.iconCircle}>
-              <FontAwesomeIcon icon={faBlog} className={styles.icon} />
-            </div>
-            <div className={styles.cardTitle}>
-              <Link
-                to={"/blog"}
-                className={styles.feature_title}
-                onClick={handleLinkClick}
-              >
-                Blog
-              </Link>
-            </div>
+        <Link
+          to={"/blog"}
+          className={styles.feature_title}
+          onClick={handleLinkClick}
+        >
+          <Card className={styles.feature_card}>
+            <Card.Body>
+              <div className={styles.iconCircle}>
+                <FontAwesomeIcon icon={faBlog} className={styles.icon} />
+              </div>
+              <div className={styles.cardTitle}>
+                <Link
+                  to={"/blog"}
+                  className={styles.feature_title}
+                  onClick={handleLinkClick}
+                >
+                  Blog
+                </Link>
+              </div>
 
-            <Card.Text className="text-center">
-              A hub for articles and updates on product authentication and
-              security within PureCheck.
-            </Card.Text>
-          </Card.Body>
-        </Card>
+              <Card.Text className="text-center">
+                A hub for articles and updates on product authentication and
+                security within PureCheck.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Link>
       </Col>
       <Col lg={4}>
-        <Card className={styles.feature_card}>
-          <Card.Body>
-            <div className={styles.iconCircle}>
-              <FontAwesomeIcon icon={faUsers} className={styles.icon} />
-            </div>
-            <div className={styles.cardTitle}>
-              <Link
-                to={"/community"}
-                className={styles.feature_title}
-                onClick={handleLinkClick}
-              >
-                Community
-              </Link>
-            </div>
+        <Link
+          to={"/community"}
+          className={styles.feature_title}
+          onClick={handleLinkClick}
+        >
+          <Card className={styles.feature_card}>
+            <Card.Body>
+              <div className={styles.iconCircle}>
+                <FontAwesomeIcon icon={faUsers} className={styles.icon} />
+              </div>
+              <div className={styles.cardTitle}>
+                <Link
+                  to={"/community"}
+                  className={styles.feature_title}
+                  onClick={handleLinkClick}
+                >
+                  Community
+                </Link>
+              </div>
 
-            <Card.Text className="text-center">
-              A forum for PureCheck users and experts to collaborate and discuss
-              authentication methods.
-            </Card.Text>
-          </Card.Body>
-        </Card>
+              <Card.Text className="text-center">
+                A forum for PureCheck users and experts to collaborate and
+                discuss authentication methods.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Link>
       </Col>
     </Row>
   );
