@@ -28,13 +28,18 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <Link style={{ textDecoration: "none" }} to={"/Blog"}>
+                  <Link style={{ textDecoration: "none" }} to={"/blog"}>
                     Blog
                   </Link>
                 </li>
-                <li>
-                  <Link style={{ textDecoration: "none" }} to={"/Community"}>
+                <li className="mb-4">
+                  <Link style={{ textDecoration: "none" }} to={"/community"}>
                     Community
+                  </Link>
+                </li>
+                <li>
+                  <Link style={{ textDecoration: "none" }} to={"/contactus"}>
+                    Contact Us
                   </Link>
                 </li>
               </ul>
