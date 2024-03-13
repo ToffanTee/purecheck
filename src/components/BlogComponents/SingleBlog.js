@@ -26,7 +26,15 @@ const SingleBlog = () => {
           {data && (
             <div style={{ color: "#fff" }}>
               <img src={BlogImage} alt="Blog Post" />
-              <p>{data.title}</p>
+              <p
+                style={{
+                  marginTop: "20px",
+                  color: "#000",
+                  marginBottom: "1rem",
+                }}
+              >
+                {data.title}
+              </p>
               <Interweave
                 content={data.content}
                 className="sinlgeBlogContent"
