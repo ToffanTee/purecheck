@@ -1,4 +1,5 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
+// import { AnimationOnScroll } from "react-animate-on-scroll";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import heroImage from "../../assets/hero_image.png";

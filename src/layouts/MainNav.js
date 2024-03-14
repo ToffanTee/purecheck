@@ -25,6 +25,15 @@ const MainNav = () => {
     setExpanded(false); // Close the mobile menu upon click
   };
 
+  const pingServer = async () => {
+    await fetch(process.env.REACT_APP_DEV_BACKEND_URL);
+  };
+
+  useEffect(() => {
+    setInterval(() => {
+      pingServer();
+    }, 5000);
+  }, []);
   const navData = [
     {
       path: "/blog",

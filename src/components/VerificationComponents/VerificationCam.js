@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useVerifyProductMutation } from "../../lib/APIs/productVerificationApi";
 import { toast } from "react-toastify";
@@ -5,9 +6,10 @@ import ErrorNotification from "../AdminComponents/ErrorNotification";
 import SuccessNotification from "../AdminComponents/SuccessNotification";
 import { Scanner } from "@yudiel/react-qr-scanner";
 import "./Verification.css";
-import { useEffect } from "react";
 
 const VerificationCam = () => {
+  const [decodedText, setDecodedText] = useState("");
+
   const notify = (errorMessage) => toast(errorMessage);
 
   const [verifyProduct, { data, isError, error, isSuccess, isLoading }] =
@@ -23,6 +25,16 @@ const VerificationCam = () => {
     }
   }, [isError, isSuccess]);
 
+  useEffect(() => {
+    if (decodedText) {
+      setTimeout(() => {
+        verifyProduct({ itemCode: decodedText });
+      }, 3000);
+    }
+
+    setDecodedText("");
+  }, [decodedText]);
+
   return (
     <Container style={{ marginTop: "100px" }}>
       <Row>
@@ -31,7 +43,7 @@ const VerificationCam = () => {
           {isError ? <ErrorNotification /> : <SuccessNotification />}
 
           <Scanner
-            onResult={(text, result) => verifyProduct({ itemCode: text })}
+            onResult={(text, result) => setDecodedText(text)}
             onError={(error) => notify(error?.message)}
           />
         </Col>

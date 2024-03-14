@@ -90,8 +90,6 @@ const ProductForm = () => {
     getAllCompaniesByUser();
   }, []);
 
-  console.log(productError);
-
   return (
     <Container>
       <Row>
