@@ -24,13 +24,15 @@ const SingleBlog = () => {
         <Col lg={1}></Col>
         <Col lg={10}>
           {data && (
-            <div style={{ color: "#fff" }}>
+            <div style={{ color: "#fff" }} className="single_post">
               <img src={BlogImage} alt="Blog Post" />
               <p
                 style={{
                   marginTop: "20px",
                   color: "#000",
                   marginBottom: "1rem",
+                  fontWeight: "bold",
+                  fontSize: "25px",
                 }}
               >
                 {data.title}

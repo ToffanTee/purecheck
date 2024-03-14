@@ -19,7 +19,7 @@ const VerificationCam = () => {
     }
 
     if (isSuccess) {
-      notify("verification successful");
+      notify(data?.message);
     }
   }, [isError, isSuccess]);
 
@@ -31,9 +31,7 @@ const VerificationCam = () => {
           {isError ? <ErrorNotification /> : <SuccessNotification />}
 
           <Scanner
-            onResult={(text, result) =>
-              verifyProduct({ name: "Test Product", itemCode: text })
-            }
+            onResult={(text, result) => verifyProduct({ itemCode: text })}
             onError={(error) => notify(error?.message)}
           />
         </Col>

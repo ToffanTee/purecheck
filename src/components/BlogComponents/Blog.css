@@ -1,3 +1,54 @@
+@media only screen and (max-width: 780px){
+  .single_post{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .App-header {
+    font-size: 15px !important;
+  }
+
+  .preview-text {
+    font-size: 12px;
+  }
+
+  .preview-btn {
+    font-size: 8px;
+font-weight: 600;
+  }
+
+  .save-btn{
+    font-size: 8px;
+font-weight: 600;
+  }
+
+  .saveas-btn {
+font-size: 8px;
+font-weight: 600;
+  }
+
+  .publish-btn {
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .form-control{
+    font-size: 10px;
+  }
+}
+
+
+@media only screen and (max-width: 342px) {
+ 
+  .preview-text {
+    font-size: 9px;
+  }
+
+
+}
+
 .App-header {
     background-color: #282c34;
     min-height: 5vh;
@@ -66,46 +117,3 @@
   color: #282c34;
 }
 
-@media only screen and (max-width: 470px) {
-  .App-header {
-    font-size: 15px !important;
-  }
-
-  .preview-text {
-    font-size: 12px;
-  }
-
-  .preview-btn {
-    font-size: 8px;
-font-weight: 600;
-  }
-
-  .save-btn{
-    font-size: 8px;
-font-weight: 600;
-  }
-
-  .saveas-btn {
-font-size: 8px;
-font-weight: 600;
-  }
-
-  .publish-btn {
-    font-size: 10px;
-    font-weight: 600;
-  }
-
-  .form-control{
-    font-size: 10px;
-  }
-}
-
-
-@media only screen and (max-width: 342px) {
- 
-  .preview-text {
-    font-size: 9px;
-  }
-
-
-}

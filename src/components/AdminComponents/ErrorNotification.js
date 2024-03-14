@@ -2,10 +2,15 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ErrorNotification = () => {
+  // const toastStyle = {
+  //   // Define styles for the red theme
+  //   color: "red",
+  // };
+
   return (
     <ToastContainer
       position="top-center"
-      autoClose={5000}
+      autoClose={10000} //300000 5000
       hideProgressBar={false}
       newestOnTop={false}
       closeOnClick
