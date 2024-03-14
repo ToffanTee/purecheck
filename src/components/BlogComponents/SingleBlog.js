@@ -32,7 +32,7 @@ const SingleBlog = () => {
                   color: "#000",
                   marginBottom: "1rem",
                   fontWeight: "bold",
-                  fontSize: "25px",
+                  fontSize: "20px",
                 }}
               >
                 {data.title}
