@@ -14,50 +14,50 @@ const Layout = (props) => {
 
   if (pathname === "/") {
     titleData = {
-      title: "PureCheck - Home",
+      title: "Home - PureCheck",
       metaDescription:
         "Home page of PureCheck, the number one leading product authentication website in Nigeria",
     };
   } else if (pathname === "/sign-up") {
     titleData = {
-      title: "PureCheck - Sign Up",
+      title: "Sign Up - PureCheck",
       metaDescription:
         "Sign Up page of PureCheck website, let's get you started when you sign up",
     };
   } else if (pathname === "/verify-account") {
     titleData = {
-      title: "PureCheck - Verify Account",
+      title: "Verify Account - PureCheck",
       metaDescription: "Account verification page of PureCheck website.",
     };
   } else if (pathname === "/login") {
     titleData = {
-      title: "PureCheck - Sign In",
+      title: "Sign In - PureCheck",
       metaDescription:
         "Sign In page of PureCheck website, let's get you started when you sign in here",
     };
   } else if (pathname === "/verify-product") {
     titleData = {
-      title: "PureCheck - Verify Product",
+      title: "Verify Product - PureCheck",
       metaDescription: "Product verification page of PureCheck website.",
     };
   } else if (pathname === "/blog") {
     titleData = {
-      title: "PureCheck - Blog",
+      title: "Blog - PureCheck",
       metaDescription: "Blog page of PureCheck website.",
     };
   } else if (pathname === "/community") {
     titleData = {
-      title: "PureCheck - Community",
+      title: "Community - PureCheck",
       metaDescription: "Community page of PureCheck website.",
     };
   } else if (pathname === "/contactus") {
     titleData = {
-      title: "PureCheck - Contact Us",
+      title: "Contact Us - PureCheck",
       metaDescription: "Contact Us page of PureCheck website.",
     };
   } else if (pathname === "/admin") {
     titleData = {
-      title: "PureCheck - Admin",
+      title: "Admin - PureCheck",
       metaDescription: "Admin page of PureCheck website.",
     };
   } else {

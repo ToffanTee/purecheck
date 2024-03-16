@@ -7,6 +7,7 @@ import { blogApi } from "../lib/APIs/blogAPI";
 import { productVerificationApi } from "../lib/APIs/productVerificationApi";
 import { companyApi } from "../lib/APIs/companyApi";
 import { threadApi } from "../lib/APIs/threadAPI";
+import { contactUsApi } from "../lib/APIs/contactUsApi";
 import userSlice from "../lib/APIs/userSlice";
 
 export const store = configureStore({
@@ -18,6 +19,7 @@ export const store = configureStore({
     [productVerificationApi.reducerPath]: productVerificationApi.reducer,
     [companyApi.reducerPath]: companyApi.reducer,
     [threadApi.reducerPath]: threadApi.reducer,
+    [contactUsApi.reducerPath]: contactUsApi.reducer,
     userState: userSlice,
   },
 
@@ -29,7 +31,8 @@ export const store = configureStore({
       blogApi.middleware,
       productVerificationApi.middleware,
       companyApi.middleware,
-      threadApi.middleware
+      threadApi.middleware,
+      contactUsApi.middleware
     ),
 });
 

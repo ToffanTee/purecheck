@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Suspense, lazy } from "react";
 import HomePage from "../pages/HomePage";
 import Login from "../components/AuthComponents/Login";
 import Register from "../components/AuthComponents/Register";
@@ -8,12 +9,15 @@ import ErrorPage from "../pages/ErrorPage";
 import BlogPage from "../pages/BlogPage";
 import ContactUsPage from "../pages/ContactUsPage";
 import AccountVerification from "../components/AuthComponents/AccountVerification";
-import AdminPage from "../pages/AdminPage";
+// import AdminPage from "../pages/AdminPage";
 import ProtectedRoutes from "./ProtectedRoutes";
 import VerificationPage from "../pages/VerificationPage";
 import CommunityPage from "../pages/CommunityPage";
 import CreateBlogsPage from "../pages/CreateBlogsPage";
 import SingleBlogPage from "../components/BlogComponents/SingleBlogPage";
+import LoadingIndicator from "../helpers/LoadingIndicator";
+
+const AdminPage = lazy(() => import("../pages/AdminPage"));
 
 const AppRoutes = () => {
   const { user } = useSelector((state) => state.userState);
@@ -42,7 +46,7 @@ const AppRoutes = () => {
 
       <Route path="/verify-product" element={<VerificationPage />} />
 
-      {user && (
+      {/* {user && (
         <Route
           path="/admin"
           element={
@@ -51,6 +55,19 @@ const AppRoutes = () => {
             </ProtectedRoutes>
           }
         ></Route>
+      )} */}
+
+      {user && (
+        <Route
+          path="/admin"
+          element={
+            <Suspense fallback={<LoadingIndicator />}>
+              <ProtectedRoutes user={user}>
+                <AdminPage />
+              </ProtectedRoutes>
+            </Suspense>
+          }
+        />
       )}
     </Routes>
   );
