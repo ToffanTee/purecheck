@@ -21,18 +21,24 @@ const SingleBlog = () => {
   return (
     <Container style={{ marginTop: "100px" }}>
       <Row>
-        <Col lg={1}></Col>
-        <Col lg={10}>
+        <Col lg={0}></Col>
+        <Col lg={12}>
           {data && (
             <div style={{ color: "#fff" }} className="single_post">
-              <img src={BlogImage} alt="Blog Post" />
+              <img
+                src={BlogImage}
+                alt="Blog Post"
+                style={{ borderRadius: "20px", height: "500px", width: "100%" }}
+                className="blog_image"
+              />
               <p
+                className="blog_title"
                 style={{
                   marginTop: "20px",
                   color: "#000",
                   marginBottom: "1rem",
                   fontWeight: "bold",
-                  fontSize: "20px",
+                  fontSize: "30px",
                 }}
               >
                 {data.title}
@@ -44,7 +50,7 @@ const SingleBlog = () => {
             </div>
           )}
         </Col>
-        <Col lg={1}></Col>
+        <Col lg={0}></Col>
       </Row>
     </Container>
   );

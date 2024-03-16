@@ -55,8 +55,8 @@ const ContactUs = () => {
         <Col lg={3}></Col>
         <Col lg={6}>
           {isError ? <ErrorNotification /> : <SuccessNotification />}
-          <Form className={styles.contact_us} onSubmit={onSubmitForm}>
-            <div>
+          <div className={styles.contact_us}>
+            <Form className="mt-20" onSubmit={onSubmitForm}>
               <Form.Group>
                 <h2 className="text-3xl text-center font-bold mb-8">
                   Contact Us
@@ -110,8 +110,8 @@ const ContactUs = () => {
               >
                 {isLoading ? "Please wait..." : "Send Message"}
               </Button>{" "}
-            </div>
-          </Form>
+            </Form>
+          </div>
         </Col>
         <Col lg={3}></Col>
       </Row>
