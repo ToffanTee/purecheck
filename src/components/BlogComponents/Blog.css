@@ -16,6 +16,15 @@
 
 }
 
+/* CLIENT BLOG CARD DESIGN */
+.blog_card {
+  background-color: #dee2f0 !important;
+  padding: 1rem !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 0.5rem !important;
+
+}
+
 @media only screen and (max-width: 470px) {
   .App-header {
     font-size: 15px !important;
