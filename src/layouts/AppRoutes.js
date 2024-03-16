@@ -14,7 +14,7 @@ import ProtectedRoutes from "./ProtectedRoutes";
 import VerificationPage from "../pages/VerificationPage";
 import CommunityPage from "../pages/CommunityPage";
 import CreateBlogsPage from "../pages/CreateBlogsPage";
-import SingleBlogPage from "../components/BlogComponents/SingleBlogPage";
+import SingleBlogPage from "../pages/SingleBlogPage";
 import LoadingIndicator from "../helpers/LoadingIndicator";
 
 const AdminPage = lazy(() => import("../pages/AdminPage"));

@@ -1,4 +1,4 @@
-import SingleBlog from "../BlogComponents/SingleBlog";
+import SingleBlog from "../components/BlogComponents/SingleBlog";
 
 const SingleBlogPage = () => {
   return <SingleBlog />;
