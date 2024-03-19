@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useGetProductsByCompanyMutation } from "../../lib/APIs/productAPI";
 import { useGetAllCompaniesByUserMutation } from "../../lib/APIs/companyApi";
+import { toast } from "react-toastify";
 import ErrorNotification from "./ErrorNotification";
+import SuccessNotification from "./SuccessNotification";
 import { useEffect } from "react";
 import ProductQrCode from "./ProductQrCode";
 
@@ -11,6 +13,9 @@ const GenerateQrCode = () => {
   const [productName, setProductName] = useState("");
   const [codes, setCodes] = useState([]);
   const [company, setCompany] = useState("");
+
+  const notify = (errorMessage) => toast(errorMessage);
+
   const [getProductsByCompany, { data, isError, error, isSuccess, isLoading }] =
     useGetProductsByCompanyMutation();
 
@@ -54,6 +59,16 @@ const GenerateQrCode = () => {
     }
   };
 
+  useEffect(() => {
+    if (isError) {
+      notify(error?.data?.error || "Unable to generate QR code");
+    }
+
+    if (isSuccess) {
+      notify(data?.message);
+    }
+  }, [isError, error, isSuccess]);
+
   const goBack = () => {
     setCodes([]);
     if (showCode) {
@@ -64,7 +79,7 @@ const GenerateQrCode = () => {
   return (
     <Container>
       <Row>
-        <ErrorNotification />
+        {isError ? <ErrorNotification /> : <SuccessNotification />}
 
         <Col lg={3}></Col>
         <Col lg={9}>

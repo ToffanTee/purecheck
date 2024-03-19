@@ -8,6 +8,7 @@ import {
 import { useGetAllCompaniesByUserMutation } from "../../lib/APIs/companyApi";
 import ProductList from "./ProductList";
 import ErrorNotification from "./ErrorNotification";
+import SuccessNotification from "./SuccessNotification";
 
 const ProductForm = () => {
   const [name, setName] = useState("");
@@ -78,13 +79,17 @@ const ProductForm = () => {
 
   useEffect(() => {
     if (isError) {
-      notify(error?.data?.error || "unable to create product");
+      notify(error?.data?.error || "Unable to create product");
     }
 
     if (updateProductError) {
-      notify(productError?.data?.error || "something went wrong");
+      notify(productError?.data?.error || "Something went wrong");
     }
-  }, [isError, error, updateProductError]);
+
+    if (isSuccess) {
+      notify(data?.message);
+    }
+  }, [isError, error, updateProductError, isSuccess]);
 
   useEffect(() => {
     getAllCompaniesByUser();
@@ -93,7 +98,7 @@ const ProductForm = () => {
   return (
     <Container>
       <Row>
-        <ErrorNotification />
+        {isError ? <ErrorNotification /> : <SuccessNotification />}
 
         <Col lg={3}></Col>
         <Col lg={6}>

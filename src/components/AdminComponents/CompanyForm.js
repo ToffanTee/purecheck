@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useCreateCompanyMutation } from "../../lib/APIs/companyApi";
 import ErrorNotification from "./ErrorNotification";
+import SuccessNotification from "./SuccessNotification";
 
 const CompanyForm = (props) => {
   const [name, setName] = useState("");
@@ -31,14 +32,18 @@ const CompanyForm = (props) => {
 
   useEffect(() => {
     if (isError) {
-      notify(error?.data?.error || "unable to create company");
+      notify(error?.data?.error || "Unable to create company");
     }
-  }, [isError, error]);
+
+    if (isSuccess) {
+      notify(data?.message);
+    }
+  }, [isError, error, isSuccess]);
 
   return (
     <Container>
       <Row>
-        <ErrorNotification />
+        {isError ? <ErrorNotification /> : <SuccessNotification />}
 
         <Col lg={3}></Col>
         <Col lg={9}>
