@@ -57,18 +57,16 @@ const AppRoutes = () => {
         ></Route>
       )} */}
 
-      {user && (
-        <Route
-          path="/admin"
-          element={
-            <Suspense fallback={<LoadingIndicator />}>
-              <ProtectedRoutes user={user}>
-                <AdminPage />
-              </ProtectedRoutes>
-            </Suspense>
-          }
-        />
-      )}
+      <Route
+        path="/admin"
+        element={
+          <Suspense fallback={<LoadingIndicator />}>
+            <ProtectedRoutes user={user}>
+              <AdminPage />
+            </ProtectedRoutes>
+          </Suspense>
+        }
+      />
     </Routes>
   );
 };
