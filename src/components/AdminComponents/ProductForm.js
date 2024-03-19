@@ -189,7 +189,7 @@ const ProductForm = () => {
           </Form>
         </Col>
       </Row>
-      <ProductList />
+      {/* <ProductList /> */}
     </Container>
   );
 };
