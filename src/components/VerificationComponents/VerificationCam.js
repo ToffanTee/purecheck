@@ -29,7 +29,7 @@ const VerificationCam = () => {
     if (decodedText) {
       setTimeout(() => {
         verifyProduct({ itemCode: decodedText });
-      }, 3000);
+      }, 2000);
     }
 
     setDecodedText("");
