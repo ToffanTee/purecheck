@@ -41,7 +41,9 @@ const VerificationCam = () => {
         <Col md={3}></Col>
         <Col md={6}>
           {isError ? <ErrorNotification /> : <SuccessNotification />}
-
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <h2>Find a code to scan</h2>
+          </div>
           <Scanner
             onResult={(text, result) => setDecodedText(text)}
             onError={(error) => notify(error?.message)}
