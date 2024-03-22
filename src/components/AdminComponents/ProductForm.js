@@ -6,7 +6,7 @@ import {
   useUpdateProductMutation,
 } from "../../lib/APIs/productAPI";
 import { useGetAllCompaniesByUserMutation } from "../../lib/APIs/companyApi";
-import ProductList from "./ProductList";
+// import ProductList from "./ProductList";
 import ErrorNotification from "./ErrorNotification";
 import SuccessNotification from "./SuccessNotification";
 
@@ -38,6 +38,10 @@ const ProductForm = () => {
   const onCreateProduct = (event) => {
     event.preventDefault();
 
+    if (!name || !description || !NAFDAC_NO || !company || !productTotal) {
+      return;
+    }
+
     createProduct({
       name,
       description,
@@ -46,10 +50,20 @@ const ProductForm = () => {
       productTotal,
       productCode: name.slice(0, 3).toUpperCase(),
     });
+
+    setName("");
+    setDescription("");
+    setNAFDAC_NO("");
+    setCompany("");
+    setProductTotal("");
   };
 
   const onUpdateProduct = (event) => {
     event.preventDefault();
+
+    if (!name || !description || !NAFDAC_NO || !company || !productTotal) {
+      return;
+    }
 
     updateProduct({
       name,
@@ -59,21 +73,17 @@ const ProductForm = () => {
       productTotal,
       productCode: name.slice(0, 3).toUpperCase(),
     });
+
+    setName("");
+    setDescription("");
+    setNAFDAC_NO("");
+    setCompany("");
+    setProductTotal("");
   };
 
   useEffect(() => {
     if (isSuccess) {
-      setSuccessMessage("Product created successfully");
-
-      setName("");
-      setDescription("");
-      setNAFDAC_NO("");
-      setCompany("");
-      setProductTotal("");
-
-      setTimeout(() => {
-        setSuccessMessage(null);
-      }, 3000);
+      notify("Product created successfully");
     }
   }, [isSuccess]);
 
@@ -82,14 +92,14 @@ const ProductForm = () => {
       notify(error?.data?.error || "Unable to create product");
     }
 
+    if (updateProductSuccess) {
+      notify("Product updated successfully");
+    }
+
     if (updateProductError) {
       notify(productError?.data?.error || "Something went wrong");
     }
-
-    if (isSuccess) {
-      notify(data?.message);
-    }
-  }, [isError, error, updateProductError, isSuccess]);
+  }, [isError, error, updateProductError, updateProductSuccess]);
 
   useEffect(() => {
     getAllCompaniesByUser();
@@ -105,7 +115,7 @@ const ProductForm = () => {
           <h1 className="d-block text-xl font-semibold leading-6 text-gray-900">
             Create Product
           </h1>
-          <Form className="mt-5  mb-5">
+          <Form className="mt-5 mb-20">
             <Form.Group className="mb-3">
               <Form.Label className="d-block text-sm font-semibold leading-6 text-gray-900">
                 Product Name

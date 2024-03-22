@@ -10,7 +10,7 @@ const ErrorNotification = () => {
   return (
     <ToastContainer
       position="top-center"
-      autoClose={10000} //300000 5000
+      autoClose={7000} //300000 5000
       hideProgressBar={false}
       newestOnTop={false}
       closeOnClick

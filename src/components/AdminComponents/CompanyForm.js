@@ -27,7 +27,8 @@ const CompanyForm = (props) => {
     });
 
     setName("");
-    return setSubscriptionType("");
+    setSubscriptionType("");
+    event.target.reset();
   };
 
   useEffect(() => {

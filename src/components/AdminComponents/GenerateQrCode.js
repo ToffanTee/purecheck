@@ -16,11 +16,11 @@ const GenerateQrCode = () => {
 
   const notify = (errorMessage) => toast(errorMessage);
 
-  const [getProductsByCompany, { data, isError, error, isSuccess, isLoading }] =
-    useGetProductsByCompanyMutation();
-
   const [getAllCompaniesByUser, { data: userCompanies }] =
     useGetAllCompaniesByUserMutation();
+
+  const [getProductsByCompany, { data, isError, error, isLoading }] =
+    useGetProductsByCompanyMutation();
 
   useEffect(() => {
     getAllCompaniesByUser();
@@ -54,6 +54,7 @@ const GenerateQrCode = () => {
     event.preventDefault();
     if (codes.length > 0) {
       setShowCode(true);
+      notify("Product QR codes generated");
     } else {
       return;
     }
@@ -63,11 +64,7 @@ const GenerateQrCode = () => {
     if (isError) {
       notify(error?.data?.error || "Unable to generate QR code");
     }
-
-    if (isSuccess) {
-      notify(data?.message);
-    }
-  }, [isError, error, isSuccess]);
+  }, [isError, error]);
 
   const goBack = () => {
     setCodes([]);
