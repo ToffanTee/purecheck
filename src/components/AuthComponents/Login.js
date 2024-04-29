@@ -130,9 +130,9 @@ const Login = () => {
             </div>
           </form>
           <div>
-            <a href="#" className={styles.forgot_password}>
+            <Link to={"/forgot-password"} className={styles.forgot_password}>
               Forgot password?
-            </a>
+            </Link>
           </div>
           <div>
             <p>

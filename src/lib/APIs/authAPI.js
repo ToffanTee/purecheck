@@ -15,7 +15,7 @@ export const authApi = createApi({
   endpoints: (builder) => ({
     verifyUserAccount: builder.mutation({
       query: (payload) => ({
-        url: "api/users/verify-account",
+        url: "/api/users/verify-account",
         method: "POST",
         body: payload,
         credentials: "include",
@@ -38,6 +38,22 @@ export const authApi = createApi({
       },
     }),
 
+    forgotUserPassword: builder.mutation({
+      query: (payload) => ({
+        url: "/api/users/forgot-password",
+        method: "POST",
+        body: payload,
+      }),
+    }),
+
+    resetUserPassword: builder.mutation({
+      query: (payload) => ({
+        url: "/api/users/reset-password",
+        method: "POST",
+        body: payload,
+      }),
+    }),
+
     logoutUser: builder.mutation({
       query: () => ({
         url: "/api/logout",
@@ -57,4 +73,6 @@ export const {
   useVerifyUserAccountMutation,
   useLoginUserMutation,
   useLogoutUserMutation,
+  useForgotUserPasswordMutation,
+  useResetUserPasswordMutation,
 } = authApi;

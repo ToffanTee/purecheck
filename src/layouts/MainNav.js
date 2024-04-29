@@ -39,10 +39,10 @@ const MainNav = () => {
       path: "/blog",
       name: "Blog",
     },
-    {
-      path: "/community",
-      name: "Community",
-    },
+    // {
+    //   path: "/community",
+    //   name: "Community",
+    // },
     // {
     //   path: "/pricing",
     //   name: "Pricing",

@@ -9,6 +9,8 @@ import ErrorPage from "../pages/ErrorPage";
 import BlogPage from "../pages/BlogPage";
 import ContactUsPage from "../pages/ContactUsPage";
 import AccountVerification from "../components/AuthComponents/AccountVerification";
+import ForgotPasswordEmail from "../components/AuthComponents/ForgotPasswordEmail";
+import ResetPassword from "../components/AuthComponents/ResetPassword";
 // import AdminPage from "../pages/AdminPage";
 import ProtectedRoutes from "./ProtectedRoutes";
 import VerificationPage from "../pages/VerificationPage";
@@ -32,6 +34,8 @@ const AppRoutes = () => {
         <Route path="login" element={<Login />} />
         <Route path="sign-up" element={<Register />} />
         <Route path="verify-account" element={<AccountVerification />} />
+        <Route path="forgot-password" element={<ForgotPasswordEmail />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Route>
 
       <Route path="/blog" element={<BlogPage />} />

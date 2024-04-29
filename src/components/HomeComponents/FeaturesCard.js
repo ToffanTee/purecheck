@@ -15,7 +15,7 @@ const FeaturesCard = () => {
   };
   return (
     <Row className={styles.feature_section}>
-      <Col lg={4}>
+      <Col lg={6}>
         <Link
           to={"/"}
           className={styles.feature_title}
@@ -44,7 +44,7 @@ const FeaturesCard = () => {
           </Card>
         </Link>
       </Col>
-      <Col lg={4}>
+      <Col lg={6}>
         <Link
           to={"/blog"}
           className={styles.feature_title}
@@ -73,7 +73,8 @@ const FeaturesCard = () => {
           </Card>
         </Link>
       </Col>
-      <Col lg={4}>
+      <Col lg={0}></Col>
+      {/* <Col lg={4}>
         <Link
           to={"/community"}
           className={styles.feature_title}
@@ -101,7 +102,7 @@ const FeaturesCard = () => {
             </Card.Body>
           </Card>
         </Link>
-      </Col>
+      </Col> */}
     </Row>
   );
 };
