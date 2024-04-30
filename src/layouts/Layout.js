@@ -35,12 +35,27 @@ const Layout = (props) => {
       metaDescription:
         "Sign In page of PureCheck website, let's get you started when you sign in here",
     };
+  } else if (pathname === "/reset-password") {
+    titleData = {
+      title: "Forgot Password - PureCheck",
+      metaDescription: "Forgot password page of PureCheck website.",
+    };
+  } else if (pathname === "/forgot-password") {
+    titleData = {
+      title: "Forgot Password - PureCheck",
+      metaDescription: "Forgot password page of PureCheck website.",
+    };
   } else if (pathname === "/verify-product") {
     titleData = {
       title: "Verify Product - PureCheck",
       metaDescription: "Product verification page of PureCheck website.",
     };
   } else if (pathname === "/blog") {
+    titleData = {
+      title: "Blog - PureCheck",
+      metaDescription: "Blog page of PureCheck website.",
+    };
+  } else if (pathname === "/blogs/:title") {
     titleData = {
       title: "Blog - PureCheck",
       metaDescription: "Blog page of PureCheck website.",
@@ -58,6 +73,11 @@ const Layout = (props) => {
   } else if (pathname === "/admin") {
     titleData = {
       title: "Admin - PureCheck",
+      metaDescription: "Admin page of PureCheck website.",
+    };
+  } else if (pathname === "/admin/blogs-create") {
+    titleData = {
+      title: "Create Blogs - PureCheck",
       metaDescription: "Admin page of PureCheck website.",
     };
   } else {
