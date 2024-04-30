@@ -1,17 +1,23 @@
+import { useState } from "react";
+
 const SideNav = (props) => {
+  const [activeItem, setActiveItem] = useState(""); // State to keep track of active item
   const onShowQrCode = (event) => {
     event.preventDefault();
     props.displayQrCode();
+    setActiveItem("qrCode");
   };
 
   const onShowProductForm = (event) => {
     event.preventDefault();
     props.displayProductForm();
+    setActiveItem("productForm");
   };
 
   const onShowCompanyForm = (event) => {
     event.preventDefault();
     props.displayCompanyForm();
+    setActiveItem("companyForm");
   };
 
   return (
@@ -22,7 +28,7 @@ const SideNav = (props) => {
     >
       <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
         <ul class="space-y-2 font-medium">
-          <li style={{ marginTop: "100px" }}>
+          {/* <li style={{ marginTop: "100px" }}>
             <a
               href="#"
               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
@@ -39,11 +45,17 @@ const SideNav = (props) => {
               </svg>
               <span class="ms-3">Dashboard</span>
             </a>
-          </li>
-          <li onClick={onShowCompanyForm}>
+          </li> */}
+          <li style={{ marginTop: "100px" }} onClick={onShowCompanyForm}>
             <a
               href="#"
-              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              style={{ textDecoration: "none" }}
+              className={`flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
+                activeItem === "companyForm"
+                  ? "bg-gray-100 dark:bg-gray-700"
+                  : ""
+              }`}
+              onClick={() => setActiveItem("companyForm")}
             >
               <svg
                 class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -60,7 +72,13 @@ const SideNav = (props) => {
           <li onClick={onShowProductForm}>
             <a
               href="#"
-              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              style={{ textDecoration: "none" }}
+              className={`flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
+                activeItem === "productForm"
+                  ? "bg-gray-100 dark:bg-gray-700"
+                  : ""
+              }`}
+              onClick={() => setActiveItem("productForm")}
             >
               <svg
                 class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -77,7 +95,11 @@ const SideNav = (props) => {
           <li onClick={onShowQrCode}>
             <a
               href="#"
-              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              style={{ textDecoration: "none" }}
+              className={`flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
+                activeItem === "qrCode" ? "bg-gray-100 dark:bg-gray-700" : ""
+              }`}
+              onClick={() => setActiveItem("qrCode")}
             >
               <svg
                 class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
