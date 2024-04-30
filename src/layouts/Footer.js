@@ -32,11 +32,11 @@ const Footer = () => {
                     Blog
                   </Link>
                 </li>
-                <li className="mb-4">
+                {/* <li className="mb-4">
                   <Link style={{ textDecoration: "none" }} to={"/community"}>
                     Community
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link style={{ textDecoration: "none" }} to={"/contactus"}>
                     Contact Us
