@@ -26,7 +26,7 @@ const MainNav = () => {
   };
 
   const pingServer = async () => {
-    await fetch(process.env.REACT_APP_DEV_BACKEND_URL);
+    await fetch(process.env.REACT_APP_PROD_BACKEND_URL);
   };
 
   useEffect(() => {
